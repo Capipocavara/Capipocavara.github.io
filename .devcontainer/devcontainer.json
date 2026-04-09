@@ -1,0 +1,29 @@
+{
+	"build": {
+		"dockerfile": "./Dockerfile",
+		"context": "."
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+            "version": "none"
+        },
+		"ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "ppa": "false"
+        }
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"github.copilot.chat.codeGeneration.instructions": [
+					{
+						"text": "This dev container includes `jekyll` (with `github-pages` and `jekyll-sass-converter`) and bundler (`bundle`) pre-installed and available on the `PATH`."
+					}
+				]
+			}
+		}
+	},
+	"forwardPorts": [4000],
+	"postCreateCommand": "sh /usr/local/post-create.sh",
+	"remoteUser": "root"
+}
