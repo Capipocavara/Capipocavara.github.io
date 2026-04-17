@@ -8,7 +8,7 @@ on:
 permissions:
   contents: read
   pages: write
-s
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
